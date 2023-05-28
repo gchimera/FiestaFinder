@@ -60,14 +60,14 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="logoutCell" id="EIL-gz-4Pl">
-                                <rect key="frame" x="0.0" y="137.33333587646484" width="393" height="35"/>
+                                <rect key="frame" x="0.0" y="137.33333587646484" width="393" height="35.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EIL-gz-4Pl" id="3rs-Uc-Sl9">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="35.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1C-75-ibs">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="35.333333333333336"/>
                                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.6076211735" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="tinted" title="Logout"/>
@@ -179,6 +179,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="G8q-yO-tCP">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
@@ -287,12 +288,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="75.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gNM-fn-Wbf" id="uz4-Vh-1en"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" id="8jJ-Iz-FZ8">
                                         <rect key="frame" x="0.0" y="76.666666666666657" width="333" height="75.666666666666657"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gNM-fn-Wbf" id="9IW-Cj-BWe"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

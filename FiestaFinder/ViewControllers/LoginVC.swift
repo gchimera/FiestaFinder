@@ -12,6 +12,10 @@ class LoginVC: UIViewController {
         userTX?.text = UserCredentials.emailAuth
         psswTX?.text = UserCredentials.passwAuth
         
+        /// autoclose  keyboard when tap outside textfield
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+         view.addGestureRecognizer(tapGesture)
+        
         /// Event reminders
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted {
@@ -21,6 +25,10 @@ class LoginVC: UIViewController {
             }
         }
     }
+    
+    @objc func handleTap() {
+           view.endEditing(true)
+       }
     
     @IBAction func signin() {
         FirebaseActions().signIn(email: userTX?.text ?? "", password: psswTX?.text ?? "", viewController: self, completion: { user, error in
