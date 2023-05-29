@@ -23,7 +23,7 @@ class ProfileVC: UITableViewController {
         switch indexPath.row {
         case 0:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "intro")
-            cell?.textLabel?.textColor = .systemRed
+            cell?.textLabel?.textColor = .blue
             cell?.textLabel?.text = "User profile details stored on Firebase"
         case 1:
             cell = self.tableView.dequeueReusableCell(withIdentifier: "detailCell")
@@ -53,7 +53,7 @@ class ProfileVC: UITableViewController {
                 cell?.textLabel?.textColor = .red
                 cell?.textLabel?.text = "Loggin out in few seconds..."
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: false)
                 }
             }
         }

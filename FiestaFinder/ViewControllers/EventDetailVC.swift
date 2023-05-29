@@ -74,7 +74,6 @@ extension EventDetailVC {
             cell.textLabel?.text = "Reminder"
         case 4:
             cell.textLabel?.text = "latidute: \(event!.latitude) - longitude: \(event!.longitude)"
-            
             cell.detailTextLabel?.text = "🗺️ Tap here to open the current coordinates from Map app"
         default: break
             

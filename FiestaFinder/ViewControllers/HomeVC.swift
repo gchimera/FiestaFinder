@@ -1,5 +1,6 @@
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class HomeVC: UITableViewController {
     
@@ -8,12 +9,23 @@ class HomeVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fetch data from Firestore
+        /// Fetch data from Firestore
         FirebaseActions().fetchEvents(completion: { events, error in
             self.data = events
             self.tableView.reloadData()
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if Auth.auth().currentUser == nil {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     // MARK: - Table view data source

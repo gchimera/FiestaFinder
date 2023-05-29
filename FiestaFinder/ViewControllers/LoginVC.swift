@@ -26,6 +26,12 @@ class LoginVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userTX?.text = UserCredentials.emailAuth
+        psswTX?.text = UserCredentials.passwAuth
+    }
+    
     @objc func handleTap() {
            view.endEditing(true)
        }
